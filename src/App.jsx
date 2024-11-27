@@ -25,11 +25,11 @@ const App = () => {
   };
 
   const iconMap = {
-    snapchat: <FaSnapchat fontSize='xx-large' />,
-    chatwoot: <SiChatwoot fontSize='xx-large' />,
-    wechatWork: <AiFillWechatWork fontSize='xx-large' />,
-    wechatChannels: <RiWechatChannelsLine fontSize='xx-large' />,
-    chatbot: <SiChatbot fontSize='xx-large' />,
+    snapchat: <FaSnapchat />,
+    chatwoot: <SiChatwoot />,
+    wechatWork: <AiFillWechatWork />,
+    wechatChannels: <RiWechatChannelsLine />,
+    chatbot: <SiChatbot />,
   };
 
   return (
@@ -136,8 +136,8 @@ const App = () => {
           className="chat-title"
           style={{ backgroundColor: customization.titleBgColor }}
         >
-          <span>{iconMap[customization.buttonIcon]}</span>
-          <span style={{ marginLeft: '10px' }}>Jinn Live</span>
+          <span style={{ fontSize: 'xx-large' }}>{iconMap[customization.buttonIcon]}</span>
+          <span style={{ marginLeft: "10px" }}>Jinn Live</span>
         </div>
         <div className="chat-messages">
           <div
@@ -149,14 +149,17 @@ const App = () => {
           >
             Hello Jinn
           </div>
-          <div
-            className="bot-message"
-            style={{
-              backgroundColor: customization.botBubbleBgColor,
-              color: customization.botTextColor,
-            }}
-          >
-            Hello Anurag! How can I help you today?
+          <div className="bot-message">
+            <span className="bot-icon">{iconMap[customization.buttonIcon]}</span>
+            <div
+              className="message-text"
+              style={{
+                backgroundColor: customization.botBubbleBgColor,
+                color: customization.botTextColor,
+              }}
+            >
+              Hello Anurag! How can I help you today?
+            </div>
           </div>
         </div>
         <div className="chat-input">

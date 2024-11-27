@@ -103,23 +103,37 @@ body {
 
 .bot-message,
 .user-message {
-  padding: 10px 15px;
-  border-radius: 12px;
+  display: flex;
+  align-items: center;
   margin: 10px 0;
   max-width: 70%;
-  word-wrap: break-word;
 }
 
 .bot-message {
-  background: #f1f1f1;
-  color: #000;
   align-self: flex-start;
+}
+
+.user-message {
+  width: fit-content;
+  margin-left: auto;
+}
+
+.message-text {
+  padding: 10px 15px;
+  border-radius: 12px;
+  word-wrap: break-word;
+}
+
+.bot-icon {
+  margin-right: 10px;
+  font-size: x-large;
 }
 
 .user-message {
   background: #007bff;
   color: #fff;
-  align-self: flex-end;
+  padding: 10px 15px;
+  border-radius: 12px;
 }
 
 .chat-input {

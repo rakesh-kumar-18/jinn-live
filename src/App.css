@@ -60,6 +60,21 @@ body {
   border-radius: 8px;
 }
 
+.customization-grid select {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #f9f9f9;
+  cursor: pointer;
+  outline: none;
+}
+
+.customization-grid select:focus {
+  border-color: #007bff;
+}
+
 .chatbot-container {
   background: #ffffff;
   border: 2px solid #000;

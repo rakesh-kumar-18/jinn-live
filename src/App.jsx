@@ -1,12 +1,17 @@
 import { useState } from "react";
 import "./App.css";
 import { IoMdSend } from "react-icons/io";
+import { FaSnapchat } from "react-icons/fa";
+import { SiChatwoot } from "react-icons/si";
+import { AiFillWechatWork } from "react-icons/ai";
+import { RiWechatChannelsLine } from "react-icons/ri";
+import { SiChatbot } from "react-icons/si";
 
 const App = () => {
   const [customization, setCustomization] = useState({
-    buttonIcon: "🙂",
+    buttonIcon: "snapchat",
     borderColor: "#000000",
-    borderRadius: "12px",
+    borderRadius: "12",
     titleBgColor: "#000000",
     botBubbleBgColor: "#F1F1F1",
     botTextColor: "#000000",
@@ -19,6 +24,14 @@ const App = () => {
     setCustomization((prev) => ({ ...prev, [key]: value }));
   };
 
+  const iconMap = {
+    snapchat: <FaSnapchat fontSize='xx-large' />,
+    chatwoot: <SiChatwoot fontSize='xx-large' />,
+    wechatWork: <AiFillWechatWork fontSize='xx-large' />,
+    wechatChannels: <RiWechatChannelsLine fontSize='xx-large' />,
+    chatbot: <SiChatbot fontSize='xx-large' />,
+  };
+
   return (
     <div className="app">
       {/* Customization Section */}
@@ -27,11 +40,16 @@ const App = () => {
         <div className="customization-grid">
           <div>
             <label>Button Icon:</label>
-            <input
-              type="text"
+            <select
               value={customization.buttonIcon}
               onChange={(e) => handleChange("buttonIcon", e.target.value)}
-            />
+            >
+              <option value="snapchat">Snapchat (Default)</option>
+              <option value="chatwoot">Chatwoot</option>
+              <option value="wechatWork">Wechat Work</option>
+              <option value="wechatChannels">Wechat Channels</option>
+              <option value="chatbot">Chatbot</option>
+            </select>
           </div>
           <div>
             <label>Border Color:</label>
@@ -42,7 +60,7 @@ const App = () => {
             />
           </div>
           <div>
-            <label>Border Radius:</label>
+            <label>Border Radius (px):</label>
             <input
               type="text"
               value={customization.borderRadius}
@@ -91,11 +109,16 @@ const App = () => {
           </div>
           <div>
             <label>Text Font:</label>
-            <input
-              type="text"
+            <select
               value={customization.font}
               onChange={(e) => handleChange("font", e.target.value)}
-            />
+            >
+              <option value="Arial">Arial</option>
+              <option value="Verdana">Verdana</option>
+              <option value="Times New Roman">Times New Roman</option>
+              <option value="Georgia">Georgia</option>
+              <option value="Courier New">Courier New</option>
+            </select>
           </div>
         </div>
       </div>
@@ -105,7 +128,7 @@ const App = () => {
         className="chatbot-container"
         style={{
           borderColor: customization.borderColor,
-          borderRadius: customization.borderRadius,
+          borderRadius: `${customization.borderRadius}px`,
           fontFamily: customization.font,
         }}
       >
@@ -113,7 +136,8 @@ const App = () => {
           className="chat-title"
           style={{ backgroundColor: customization.titleBgColor }}
         >
-          <span>{customization.buttonIcon} Jinn Live</span>
+          <span>{iconMap[customization.buttonIcon]}</span>
+          <span style={{ marginLeft: '10px' }}>Jinn Live</span>
         </div>
         <div className="chat-messages">
           <div

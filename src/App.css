@@ -7,47 +7,60 @@
 body {
   font-family: Arial, sans-serif;
   background: #008ad3;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .app {
-  display: flex;
-  height: 100vh;
-  padding: 20px;
+  display: grid;
+  grid-template-columns: 2fr 1.2fr;
+  gap: 20px;
+  width: 90%;
+  height: 90%;
 }
 
 .customization-panel {
-  flex: 1;
-  padding: 20px;
   background: #ffffff;
   border-radius: 12px;
+  padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-right: 20px;
-  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .customization-panel h2 {
+  text-align: center;
   margin-bottom: 20px;
-  font-size: 18px;
   color: #333;
 }
 
-.customization-panel label {
-  display: block;
-  margin: 10px 0 15px;
+.customization-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.customization-grid div {
+  display: flex;
+  flex-direction: column;
+}
+
+.customization-grid label {
+  margin-bottom: 8px;
   font-size: 14px;
   color: #555;
 }
 
-.customization-panel input {
-  width: 100%;
-  padding: 8px;
+.customization-grid input[type="text"] {
+  padding: 10px;
   font-size: 14px;
   border: 1px solid #ddd;
   border-radius: 8px;
 }
 
 .chatbot-container {
-  flex: 2;
   background: #ffffff;
   border: 2px solid #000;
   border-radius: 12px;
@@ -111,9 +124,7 @@ body {
 
 .chat-input button {
   margin-left: 10px;
-  padding: 10px 15px;
-  background: #007bff;
-  color: #fff;
+  font-size: x-large;
   border: none;
   border-radius: 8px;
   cursor: pointer;

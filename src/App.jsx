@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import { IoMdSend } from "react-icons/io";
 
 const App = () => {
   const [customization, setCustomization] = useState({
@@ -9,7 +10,7 @@ const App = () => {
     titleBgColor: "#000000",
     botBubbleBgColor: "#F1F1F1",
     botTextColor: "#000000",
-    userBubbleBgColor: "#007BFF",
+    userBubbleBgColor: "#000000",
     userTextColor: "#FFFFFF",
     font: "Arial",
   });
@@ -20,84 +21,86 @@ const App = () => {
 
   return (
     <div className="app">
-      {/* Customization Panel */}
+      {/* Customization Section */}
       <div className="customization-panel">
-        <h2>Customize Chatbot</h2>
-        <label>
-          Button Icon:
-          <input
-            type="text"
-            value={customization.buttonIcon}
-            onChange={(e) => handleChange("buttonIcon", e.target.value)}
-          />
-        </label>
-        <label>
-          Border Color:
-          <input
-            type="color"
-            value={customization.borderColor}
-            onChange={(e) => handleChange("borderColor", e.target.value)}
-          />
-        </label>
-        <label>
-          Border Radius:
-          <input
-            type="text"
-            value={customization.borderRadius}
-            onChange={(e) => handleChange("borderRadius", e.target.value)}
-          />
-        </label>
-        <label>
-          Chat Title Background Color:
-          <input
-            type="color"
-            value={customization.titleBgColor}
-            onChange={(e) => handleChange("titleBgColor", e.target.value)}
-          />
-        </label>
-        <label>
-          Bot Bubble Background Color:
-          <input
-            type="color"
-            value={customization.botBubbleBgColor}
-            onChange={(e) => handleChange("botBubbleBgColor", e.target.value)}
-          />
-        </label>
-        <label>
-          Bot Text Color:
-          <input
-            type="color"
-            value={customization.botTextColor}
-            onChange={(e) => handleChange("botTextColor", e.target.value)}
-          />
-        </label>
-        <label>
-          User Bubble Background Color:
-          <input
-            type="color"
-            value={customization.userBubbleBgColor}
-            onChange={(e) => handleChange("userBubbleBgColor", e.target.value)}
-          />
-        </label>
-        <label>
-          User Text Color:
-          <input
-            type="color"
-            value={customization.userTextColor}
-            onChange={(e) => handleChange("userTextColor", e.target.value)}
-          />
-        </label>
-        <label>
-          Text Font:
-          <input
-            type="text"
-            value={customization.font}
-            onChange={(e) => handleChange("font", e.target.value)}
-          />
-        </label>
+        <h2>Customize Your Chatbot</h2>
+        <div className="customization-grid">
+          <div>
+            <label>Button Icon:</label>
+            <input
+              type="text"
+              value={customization.buttonIcon}
+              onChange={(e) => handleChange("buttonIcon", e.target.value)}
+            />
+          </div>
+          <div>
+            <label>Border Color:</label>
+            <input
+              type="color"
+              value={customization.borderColor}
+              onChange={(e) => handleChange("borderColor", e.target.value)}
+            />
+          </div>
+          <div>
+            <label>Border Radius:</label>
+            <input
+              type="text"
+              value={customization.borderRadius}
+              onChange={(e) => handleChange("borderRadius", e.target.value)}
+            />
+          </div>
+          <div>
+            <label>Title Background Color:</label>
+            <input
+              type="color"
+              value={customization.titleBgColor}
+              onChange={(e) => handleChange("titleBgColor", e.target.value)}
+            />
+          </div>
+          <div>
+            <label>Bot Bubble Background:</label>
+            <input
+              type="color"
+              value={customization.botBubbleBgColor}
+              onChange={(e) => handleChange("botBubbleBgColor", e.target.value)}
+            />
+          </div>
+          <div>
+            <label>Bot Text Color:</label>
+            <input
+              type="color"
+              value={customization.botTextColor}
+              onChange={(e) => handleChange("botTextColor", e.target.value)}
+            />
+          </div>
+          <div>
+            <label>User Bubble Background:</label>
+            <input
+              type="color"
+              value={customization.userBubbleBgColor}
+              onChange={(e) => handleChange("userBubbleBgColor", e.target.value)}
+            />
+          </div>
+          <div>
+            <label>User Text Color:</label>
+            <input
+              type="color"
+              value={customization.userTextColor}
+              onChange={(e) => handleChange("userTextColor", e.target.value)}
+            />
+          </div>
+          <div>
+            <label>Text Font:</label>
+            <input
+              type="text"
+              value={customization.font}
+              onChange={(e) => handleChange("font", e.target.value)}
+            />
+          </div>
+        </div>
       </div>
 
-      {/* Chatbot Panel */}
+      {/* Chatbot Section */}
       <div
         className="chatbot-container"
         style={{
@@ -134,7 +137,9 @@ const App = () => {
         </div>
         <div className="chat-input">
           <input type="text" placeholder="Ask us anything..." />
-          <button>{customization.buttonIcon}</button>
+          <button>
+            <IoMdSend />
+          </button>
         </div>
       </div>
     </div>

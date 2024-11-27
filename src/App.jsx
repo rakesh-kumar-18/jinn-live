@@ -141,15 +141,6 @@ const App = () => {
         </div>
         <div className="chat-messages">
           <div
-            className="bot-message"
-            style={{
-              backgroundColor: customization.botBubbleBgColor,
-              color: customization.botTextColor,
-            }}
-          >
-            Hello Anurag! How can I help you today?
-          </div>
-          <div
             className="user-message"
             style={{
               backgroundColor: customization.userBubbleBgColor,
@@ -157,6 +148,15 @@ const App = () => {
             }}
           >
             Hello Jinn
+          </div>
+          <div
+            className="bot-message"
+            style={{
+              backgroundColor: customization.botBubbleBgColor,
+              color: customization.botTextColor,
+            }}
+          >
+            Hello Anurag! How can I help you today?
           </div>
         </div>
         <div className="chat-input">
